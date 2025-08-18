@@ -35,7 +35,7 @@ export const HomePage = () => {
         <CustomBreadcrumbs currentPage='Super Heroes' breadcrumbs={[]} />
         {/* Header */}
         <CustomJumbotron
-          title={'Super Heroe Universe'}
+          title='Super Heroes Universe'
           description='
           Discover, explore, and manage your favorite superheroes and villains'
         />
