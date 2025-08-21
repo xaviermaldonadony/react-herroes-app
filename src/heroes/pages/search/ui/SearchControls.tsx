@@ -136,4 +136,3 @@ export const SearchControls = () => {
     </>
   );
 };
-// http://localhost:5173/search?name=superman&category=hero
