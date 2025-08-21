@@ -3,7 +3,6 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
-  BreadcrumbPage,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 import { SlashIcon } from 'lucide-react';
@@ -16,10 +15,10 @@ interface Breadcrumb {
 
 interface Props {
   currentPage: string;
-  breadcrumbs: Breadcrumb[];
+  breadcrumbs?: Breadcrumb[];
 }
 
-export const CustomBreadcrumbs = ({ currentPage, breadcrumbs }: Props) => {
+export const CustomBreadcrumbs = ({ currentPage, breadcrumbs = [] }: Props) => {
   return (
     <Breadcrumb>
       <BreadcrumbList>

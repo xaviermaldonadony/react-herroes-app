@@ -28,11 +28,10 @@ export const HomePage = () => {
   const { data: heroesResponse } = usePaginationHero(+page, +limit, category);
   const { data: summary } = useHeroSummary();
 
-  console.log(heroesResponse);
   return (
     <>
       <>
-        <CustomBreadcrumbs currentPage='Super Heroes' breadcrumbs={[]} />
+        <CustomBreadcrumbs currentPage='Super Heroes' />
         {/* Header */}
         <CustomJumbotron
           title='Super Heroes Universe'
