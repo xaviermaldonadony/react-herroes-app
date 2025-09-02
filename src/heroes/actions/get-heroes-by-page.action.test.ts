@@ -1,9 +1,8 @@
-import { describe, expect, test } from 'vitest';
+import { describe, expect, test, beforeEach } from 'vitest';
 import AxiosMockAdapter from 'axios-mock-adapter';
 
 import { getHeroesByPageAction } from './get-heroes-by-page.action';
 import { heroApi } from '../api/hero.api';
-import { beforeEach } from 'node:test';
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
@@ -52,7 +51,6 @@ describe('getHereosByPageAction', () => {
     await getHeroesByPageAction('abc' as unknown as number);
 
     const params = heroesApiMock.history.get[0].params;
-    console.log(params);
     expect(params).toStrictEqual({ limit: 6, offset: 0, category: 'all' });
   });
 
@@ -69,7 +67,6 @@ describe('getHereosByPageAction', () => {
     await getHeroesByPageAction('5' as unknown as number);
 
     const params = heroesApiMock.history.get[0].params;
-    console.log(params);
     expect(params).toStrictEqual({ limit: 6, offset: 24, category: 'all' });
   });
 
@@ -86,7 +83,6 @@ describe('getHereosByPageAction', () => {
     await getHeroesByPageAction(2, 10, 'heroes');
 
     const params = heroesApiMock.history.get[0].params;
-    console.log(params);
     expect(params).toStrictEqual({ limit: 10, offset: 10, category: 'heroes' });
   });
 });

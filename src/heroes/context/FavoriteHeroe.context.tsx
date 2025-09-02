@@ -13,7 +13,7 @@ interface FavoriteHeroContext {
 
   //   methods
   isFavorite: (hero: Hero) => boolean;
-  toggleFavorites: (hero: Hero) => void;
+  toggleFavorite: (hero: Hero) => void;
 }
 // eslint-disable-next-line react-refresh/only-export-components
 export const FavoriteHeroContext = createContext({} as FavoriteHeroContext);
@@ -28,7 +28,7 @@ export const FavoriteHeroeProvider = ({ children }: PropsWithChildren) => {
     getFavoritesFromLocalStorage()
   );
 
-  const toggleFavorites = (hero: Hero) => {
+  const toggleFavorite = (hero: Hero) => {
     const heroExist = favorites.find((h) => h.id === hero.id);
 
     if (heroExist) {
@@ -53,7 +53,7 @@ export const FavoriteHeroeProvider = ({ children }: PropsWithChildren) => {
 
         // methods
         isFavorite,
-        toggleFavorites,
+        toggleFavorite,
       }}
     >
       {children}

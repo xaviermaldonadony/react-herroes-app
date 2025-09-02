@@ -26,7 +26,7 @@ const tanStackCustomProvider = () => {
   );
 };
 
-describe('usePaginatedhero', () => {
+describe('usePaginationHero', () => {
   beforeEach(() => {
     // Provide a default mock value to prevent the undefined error
     mockGetHeroesByPageAction.mockResolvedValue({
